@@ -15,6 +15,7 @@
 </head>
 <body>
   <div class="background">
+
     <div id="images">
       <img src = "assets/members/peter-quill.png" />
       <img src = "assets/members/gamora.png"  loading="lazy"/>
@@ -33,9 +34,36 @@
         <span></span>
         <span></span>
       </button>
+
+      <nav id="navigation">
+        <strong>Personagens</strong>
+
+        <div>
+          <button type="button" onclick="setMember(0)">
+            <img src="./assets/members/card-peter-quill.png" />
+          </button>
+          <button type="button" onclick="setMember(1)">
+            <img src="./assets/members/card-gamora.png" />
+          </button>
+          <button type="button" onclick="setMember(2)">
+            <img src="./assets/members/card-drax.png" />
+          </button>
+          <button type="button" onclick="setMember(3)">
+            <img src="./assets/members/card-mantis.png" />
+          </button>
+          <button type="button" onclick="setMember(4)">
+            <img src="./assets/members/card-rocket.png" />
+          </button>
+          <button type="button" onclick="setMember(5)">
+            <img src="./assets/members/card-groot.png" />
+          </button>
+        </div>
+
+      </nav>
+
     </header>
     <main>
-      <h1 id="member_name">Peter Quill</h1>
+      <h1 id="member_name" class="peter" data-value="Peter Quill">Peter Quill</h1>
 
 
       <div>

@@ -11,6 +11,8 @@ const members = [
 let activeMember = 0
 const images = document.getElementById('images')
 const menu = document.getElementById('menu')
+const navigation = document.getElementById('navigation')
+const memberName = document.getElementById('member_name')
 
   function changeStatusButtons() {
 
@@ -26,13 +28,28 @@ const menu = document.getElementById('menu')
 
 changeStatusButtons();
 
-function navigationMember(direction) {
-  activeMember = activeMember + direction
+function changeMember(memberId){
+  activeMember = memberId
+  const member = members[activeMember]
 
   images.style.transform = `translateY(${-100 * activeMember}vh)`;
+  memberName.classList = member.id
+
+  changeName(member.name);
   changeStatusButtons();
+}
+
+function navigationMember(direction) {
+  changeMember(activeMember + direction);
+
 }
 
 function changeMenu() {
  menu.classList.toggle('active');
+ navigation.classList.toggle('active');
+}
+
+function setMember(memberId) {
+  changeMember(memberId);
+  changeMenu();
 }
