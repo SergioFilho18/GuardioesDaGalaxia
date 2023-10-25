@@ -1,3 +1,4 @@
+
 const members = [
   { name: 'Peter Quill', id: 'peter' },
   { name: 'Gamora Titan', id: 'gamora' },
@@ -9,6 +10,7 @@ const members = [
 
 let activeMember = 0
 const images = document.getElementById('images')
+const menu = document.getElementById('menu')
 
   function changeStatusButtons() {
 
@@ -17,19 +19,9 @@ const images = document.getElementById('images')
 
     let next = document.getElementById('button_next')
 
-
-  if(activeMember == 0){
-    prev.disabled = true;
-  } else {
-    prev.disabled = false;
-  }
-
-  if(activeMember == members.length - 1) {
-    next.disabled = true;
-  } else {
-    next.disabled = false;
-  }
-  
+    prev.disabled = activeMember === 0;
+    next.disabled = activeMember === members.length - 1;
+      
 }
 
 changeStatusButtons();
@@ -39,4 +31,8 @@ function navigationMember(direction) {
 
   images.style.transform = `translateY(${-100 * activeMember}vh)`;
   changeStatusButtons();
+}
+
+function changeMenu() {
+ menu.classList.toggle('active');
 }
